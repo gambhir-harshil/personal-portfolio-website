@@ -5,17 +5,17 @@ import {
   Navbar,
   StarsCanvas
 } from "./components"
+import About from "./components/About"
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative z-0">
-          <Navbar />
+        <Navbar />
         <div className="relative z-0 bg-primary">
           <Hero />
           <StarsCanvas />
         </div>
-      </div>
+        <About />
     </BrowserRouter>
   )
 }
