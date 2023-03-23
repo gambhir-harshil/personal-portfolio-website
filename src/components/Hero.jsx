@@ -1,13 +1,24 @@
 import React, {useState, useEffect} from 'react'
 import { motion } from 'framer-motion'
+import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
-import { slideIn } from '../utils/motion'
 import { styles } from '../styles'
 import { EarthCanvas } from './canvas'
 
 const Hero = () => {
+
+  const [text, count] = useTypewriter({
+    words: [
+      "I build things for the web",
+      "I love coffee",
+      "I love to workout"
+    ],
+    loop: true,
+    delaySpeed: 2000
+  })
+
   return (
-    <section className="relative w-full h-screen mx-auto snap-center">
+    <section className="relative w-full h-screen mx-auto space-y-8 overflow-hidden">
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
@@ -17,10 +28,11 @@ const Hero = () => {
         </div>
         <div>
           <h1 className={styles.heroHeadText}>
-            Hi, I'm Harshil
+            Hi, I'm <span className='text-[#915eff] animate-pulse'>Harshil</span> 
           </h1>
           <p className={styles.heroSubText}>
-            I develop web applications
+            {text}
+            <Cursor cursorColor='#915eff' />
           </p>
         </div>
       </div>

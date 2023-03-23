@@ -6,16 +6,24 @@ import {
   StarsCanvas
 } from "./components"
 import About from "./components/About"
+import Skills from "./components/Skills"
 
 const App = () => {
   return (
     <BrowserRouter>
+      <div className="bg-primary text-white h-screen overflow-scroll z-0">
         <Navbar />
-        <div className="relative z-0 bg-primary">
+        <section className="relative z-0">
           <Hero />
           <StarsCanvas />
-        </div>
-        <About />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="skills">
+          <Skills />
+        </section>
+      </div> 
     </BrowserRouter>
   )
 }

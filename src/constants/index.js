@@ -1,3 +1,5 @@
+import { html, javascript, mongodb, nodejs, react, tailwind, typescript, nextjs } from '../assets'
+
 export const navLinks = [
     {
         id: 'about',
@@ -10,5 +12,32 @@ export const navLinks = [
     {
         id: 'contact',
         title: "Contact"
+    }
+]
+
+export const skillImg = [
+    {
+      img: html
+    },
+    {
+      img: javascript
+    },
+    {
+      img: mongodb
+    },
+    {
+      img: nodejs
+    },
+    {
+      img: react
+    },
+    {
+      img: tailwind
+    },
+    {
+      img: typescript
+    },
+    {
+      img: nextjs
     }
 ]

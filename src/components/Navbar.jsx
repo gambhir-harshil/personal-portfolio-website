@@ -21,12 +21,37 @@ const Navbar = () => {
             className="flex items-center gap-2"
             onClick={() => {
               setActive("");
-              window.scrollTo(0, 0);
+              ref.current.scrollTo(0,0)
             }}
           >
-            <span className="font-bold text-[28px] text-white">HARSHIL.</span>
+            <motion.a
+              initial={{
+                opacity: 0
+              }}
+              animate={{
+                opacity: 1
+              }}
+              transition={{
+                duration: 1
+              }}
+              className="font-semibold text-[28px] text-white tracking-[10px]">HARSHIL.</motion.a>
           </Link>
-          <ul className="list-none hidden sm:flex flex-row gap-10">
+          <motion.ul 
+            initial={{
+                y: -100,
+                opacity: 0,
+                scale: 0.5
+            }}
+            animate={{
+                y: 0,
+                opacity: 1,
+                scale: 1
+            }}
+            transition={{
+                duration: 1.5
+            }}
+            className="list-none hidden sm:flex flex-row gap-10"
+          >
             {navLinks.map((link) => (
               <li
                 key={link.id}
@@ -38,7 +63,7 @@ const Navbar = () => {
                 <a href={`#${link.id}`}>{link.title}</a>
               </li>
             ))}
-          </ul>
+          </motion.ul>
           <button
             className="sm:hidden flex top-0 right-0 z-20 relative w-10 h-10 text-white focus:outline-none"
             onClick={() => setToggle(!toggle)}
@@ -66,9 +91,19 @@ const Navbar = () => {
       <div
         className={`${
           toggle ? "sm:hidden" : "hidden opacity-0"
-        } top-0 w-96 z-[9999] overflow-hidden fixed`}
+        } top-0 w-80 z-[9999] fixed`}
       >
-        <div className="h-screen bg-white flex justify-center items-center">
+        <motion.aside
+          initial={{
+            x: -200,
+            opacity: 0
+          }}
+          whileInView={{
+            x: 0,
+            opacity: 0.8
+          }}
+          transition={{ duration: 1.2 }}
+          className="h-screen bg-white flex justify-center items-center">
           <ul className="list-none sm:hidden flex-col gap-10">
             {navLinks.map((link) => (
               <li
@@ -82,7 +117,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.aside>
       </div>
     </>
   );
