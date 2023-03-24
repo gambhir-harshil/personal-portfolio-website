@@ -1,6 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
+import { handsome } from '../assets'
+
 const About = () => {
   return (
     <div
@@ -14,19 +16,12 @@ const About = () => {
         >
           About me
         </motion.h3>
-        <motion.img
-        initial={{
-          x: -200,
-          opacity: 0
-        }}
-        transition={{
-          duration: 1.2
-        }}
-        whileInView={{x: 0, opacity: 1}}
-        viewport={{once: true}}
-        src="https://wallpapercave.com/wp/wp8562126.png"
-        className="-mb-20 mt-24 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:h-95 xl:w-[450px] xl:h-[550px]"
+        <img
+        src={handsome}
+        className="-mb-16 mt-24 md:mb-0 flex-shrink-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:h-95 xl:w-[350px] xl:h-[350px] grayscale hover:grayscale-0 transition-all ease-in-out cursor-pointer"
       />
+
+        {/* <div className='absolute w-[350px] h-[350px] border-2 border-white left-[72px] top-[300px] rounded-lg -z-50 hover:left-[68px] hover:top-[300px]'/> */}
 
       <motion.div
         initial={{
@@ -42,7 +37,7 @@ const About = () => {
           duration: 1.2
         }}
         className='space-y-10 px-0 md:px-10'>
-        <p className='text-base xl:text-lg text-secondary md:mt-20'>
+        <p className='text-base xl:text-lg text-secondary md:mt-20 md:ml-10'>
          Hello! my name is Harshil and I enjoy what I do. I possess a unique
          set of skills that make me an invaluable asset to any project. I 
          have a deep understanding of of <span className='text-white'>JavaScript</span>, <span className='text-white'>HTML</span> and <span className='text-white'>CSS</span> and I am 
