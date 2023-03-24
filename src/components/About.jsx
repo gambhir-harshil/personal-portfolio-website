@@ -27,7 +27,20 @@ const About = () => {
         className="-mb-20 mt-24 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:h-95 xl:w-[450px] xl:h-[550px]"
       />
 
-      <div className='space-y-10 px-0 md:px-10'>
+      <motion.div
+        initial={{
+          x: 200,
+          opacity: 0
+        }}
+        whileInView={{
+          x: 0,
+          opacity: 1
+        }}
+        viewport={{once: true}}
+        transition={{
+          duration: 1.2
+        }}
+        className='space-y-10 px-0 md:px-10'>
         <p className='text-base xl:text-lg text-secondary md:mt-20'>
          Hello! my name is Harshil and I enjoy what I do. I possess a unique
          set of skills that make me an invaluable asset to any project. I 
@@ -37,7 +50,7 @@ const About = () => {
          innovative, cutting-edge web applications that make a difference in
          people's lives.
         </p>
-      </div>
+      </motion.div>
     </div>
   )
 }

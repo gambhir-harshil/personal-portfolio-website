@@ -1,61 +1,85 @@
-import React, {useState, useEffect} from 'react'
-import { motion } from 'framer-motion'
-import { Cursor, useTypewriter } from 'react-simple-typewriter'
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 
-import { styles } from '../styles'
-import { EarthCanvas } from './canvas'
+import { styles } from "../styles";
+import { EarthCanvas } from "./canvas";
 
 const Hero = () => {
-
   const [text, count] = useTypewriter({
-    words: [
-      "I build things for the web",
-      "I love coffee",
-      "I love to workout"
-    ],
+    words: ["I build things for the web", "I love coffee", "I love to workout"],
     loop: true,
-    delaySpeed: 2000
-  })
+    delaySpeed: 2000,
+  });
 
   return (
-    <section className="relative w-full h-screen mx-auto space-y-8 overflow-hidden">
+    <section className="relative w-full h-screen mx-auto space-y-8">
       <div
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
         <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915eff]"/>
-          <div className="w-1 sm:h-80 h-40 violet-gradient"/>
+          <div className="w-5 h-5 rounded-full bg-[#915eff]" />
+          <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
         <div>
-          <h1 className={styles.heroHeadText}>
-            Hi, I'm <span className='text-[#915eff] animate-pulse'>Harshil</span> 
-          </h1>
-          <p className={styles.heroSubText}>
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              delay: 1,
+            }}
+            className={styles.heroHeadText}
+          >
+            Hi, I'm{" "}
+            <span className="text-[#915eff]/80">Harshil</span>
+          </motion.h1>
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              delay: 1.2
+            }}
+            className={styles.heroSubText}
+          >
             {text}
-            <Cursor cursorColor='#915eff' />
-          </p>
+            <Cursor cursorColor="#915eff" />
+          </motion.p>
         </div>
       </div>
       <EarthCanvas />
       <div className="absolute xs:bottom-10 bottom-20 w-full flex justify-center items-center">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
-            <motion.dev
+            <motion.div
               animate={{
-                y: [0, 24, 0]
+                y: [0, 24, 0],
               }}
               transition={{
-                duration:1.5,
+                duration: 1.5,
                 repeat: Infinity,
-                repeatType: 'loop'
+                repeatType: "loop",
               }}
-              className ='w-3 h-3 rounded-full bg-secondary mb-1'
+              className="w-3 h-3 rounded-full bg-secondary mb-1"
             />
           </div>
         </a>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

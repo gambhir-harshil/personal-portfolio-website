@@ -21,49 +21,99 @@ const Navbar = () => {
             className="flex items-center gap-2"
             onClick={() => {
               setActive("");
-              ref.current.scrollTo(0,0)
+              ref.current.scrollTo(0, 0);
             }}
           >
             <motion.a
               initial={{
-                opacity: 0
+                opacity: 0,
               }}
               animate={{
-                opacity: 1
+                opacity: 1,
               }}
               transition={{
-                duration: 1
+                duration: 1,
               }}
-              className="font-semibold text-[28px] text-white tracking-[10px]">HARSHIL.</motion.a>
+              className="font-semibold text-[28px] text-white tracking-[10px]"
+            >
+              HARSHIL.
+            </motion.a>
           </Link>
-          <motion.ul 
-            initial={{
+          <ul className="list-none hidden sm:flex flex-row gap-10">
+            <motion.li
+              initial={{
                 y: -100,
                 opacity: 0,
-                scale: 0.5
-            }}
-            animate={{
+                scale: 0.8,
+              }}
+              animate={{
                 y: 0,
                 opacity: 1,
-                scale: 1
-            }}
-            transition={{
-                duration: 1.5
-            }}
-            className="list-none hidden sm:flex flex-row gap-10"
-          >
-            {navLinks.map((link) => (
-              <li
-                key={link.id}
-                className={`${
-                  active === link.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer `}
-                onClick={() => setActive(link.title)}
+                scale: 1,
+              }}
+              transition={{
+                duration: 1,
+              }}
+            >
+              <a
+                className="active:text-purple-50 text-secondary hover:text-white text-[18px] 
+                font-medium cursor-pointer tracking-[2px] before:content-['01.'] before:text-white before:text-[14px] before:mr-1"
+                href="#about"
               >
-                <a href={`#${link.id}`}>{link.title}</a>
-              </li>
-            ))}
-          </motion.ul>
+                About
+              </a>
+            </motion.li>
+            <motion.li
+              initial={{
+                y: -100,
+                opacity: 0,
+                scale: 0.8,
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 1,
+                delay: 0.2,
+              }}
+            >
+              <a
+                className="active:text-white text-secondary hover:text-white text-[18px] 
+                font-medium cursor-pointer tracking-[2px] before:content-['02.'] before:text-white
+                before:text-[14px] before:mr-1"
+                href="#projects"
+              >
+                Projects
+              </a>
+            </motion.li>
+            <motion.li
+              initial={{
+                y: -100,
+                opacity: 0,
+                scale: 0.8,
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 1,
+                delay: 0.4,
+              }}
+            >
+              <a
+                className="active:text-white text-secondary hover:text-white text-[18px] 
+                font-medium cursor-pointer tracking-[2px] before:content-['03.'] before:text-white 
+                before:text-[14px] before:mr-1"
+                href="#contact"
+              >
+                Contact
+              </a>
+            </motion.li>
+          </ul>
           <button
             className="sm:hidden flex top-0 right-0 z-20 relative w-10 h-10 text-white focus:outline-none"
             onClick={() => setToggle(!toggle)}
@@ -96,14 +146,15 @@ const Navbar = () => {
         <motion.aside
           initial={{
             x: -200,
-            opacity: 0
+            opacity: 0,
           }}
           whileInView={{
             x: 0,
-            opacity: 0.8
+            opacity: 0.8,
           }}
-          transition={{ duration: 1.2 }}
-          className="h-screen bg-white flex justify-center items-center">
+          transition={{ duration: 1 }}
+          className="h-screen bg-white flex justify-center items-center"
+        >
           <ul className="list-none sm:hidden flex-col gap-10">
             {navLinks.map((link) => (
               <li
@@ -111,7 +162,10 @@ const Navbar = () => {
                 className={`${
                   active === link.title ? "text-black" : "text-black"
                 } hover:text-gray-400 text-[36px] font-medium cursor-pointer `}
-                onClick={() => {setActive(link.title); setToggle(!toggle)}}
+                onClick={() => {
+                  setActive(link.title);
+                  setToggle(!toggle);
+                }}
               >
                 <a href={`#${link.id}`}>{link.title}</a>
               </li>
