@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const Projects = () => {
   return (
     <div className='h-screen relative flex flex-col text-left
-    md:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
+    md:flex-row max-w-full justify-evenly mx-auto items-center z-0 overflow-hidden'>
         <motion.h3
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -18,7 +18,7 @@ const Projects = () => {
 
         </ div>
 
-        <div className='w-full absolute top-[30%] bg-[#915eff]/10 left-0 h-[500px] -skew-y-[10deg]'/>
+        <div className='w-full absolute top-[30%] bg-[#915eff]/10 left-0 h-[500px] -skew-y-[9deg]'/>
     </div>
   )
 }

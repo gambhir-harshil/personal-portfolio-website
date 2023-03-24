@@ -2,7 +2,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Skill from './Skill'
 import { skillImg } from '../constants'
-import { webV1 } from '../assets'
 
 const Skills = () => {
 

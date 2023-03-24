@@ -38,8 +38,12 @@ const Skill = ({skill, id}) => {
             opacity: 1
         }}
         viewport={{once: true}}
+        whileHover={{
+          rotate: 30
+        }}
         transition={{
-            duration: 1.5
+            ease: 'linear',
+            duration: 0.5
         }}
 
         className='relative flex flex-col items-center justify-center cursor-pointer text-center'

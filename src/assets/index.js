@@ -6,6 +6,6 @@ import react from './react.svg'
 import tailwind from './tailwind.png'
 import typescript from './typescript.svg'
 import nextjs from './next.png'
-import webV1 from './web1.webm' 
+import discord from './discord.svg'
 
-export { html, javascript, mongodb, nodejs, react, tailwind, typescript, nextjs, webV1 }
+export { html, javascript, mongodb, nodejs, react, tailwind, typescript, nextjs, discord }
