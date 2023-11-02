@@ -82,8 +82,8 @@ export const projects = [
       "A simple pizza ordering app made using redux toolkit and fetched data using react router's latest features. PIZZA?",
     stack: ["React", "Tailwind", "Redux toolkit", "React router"],
     image: "./projects/ThePizzaCo.png",
-    link: "https://moviedb-harshil.netlify.app/",
-    repo: "https://github.com/gambhir-harshil/MovieDb",
+    link: "https://thepizzaco.netlify.app/",
+    repo: "https://github.com/gambhir-harshil/thePizzaCo.",
   },
   {
     name: "Personal portfolio website",
@@ -92,7 +92,7 @@ export const projects = [
     stack: ["React", "Framer motion", "Tailwind"],
     image: "./projects/portfolio.png",
     link: "",
-    repo: "https://github.com/gambhir-harshil/MovieDb",
+    repo: "https://github.com/gambhir-harshil/personal-portfolio-website",
   },
   {
     name: "Qkart",
