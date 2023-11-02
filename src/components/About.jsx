@@ -20,7 +20,7 @@ const About = () => {
       <img
         src={"./handsome.jpeg"}
         className="-mb-16 mt-24 md:mb-0 flex-shrink-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:h-95 xl:w-[350px] xl:h-[350px] 
-        grayscale hover:grayscale-0 hover:scale-105 transition-all ease-in-out cursor-pointer"
+        lg:grayscale hover:grayscale-0 hover:scale-105 transition-all ease-in-out cursor-pointer"
       />
 
       <motion.div
