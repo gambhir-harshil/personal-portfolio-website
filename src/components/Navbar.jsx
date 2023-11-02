@@ -112,6 +112,7 @@ const Navbar = () => {
             <motion.li>
               <a
                 href="./resume.pdf"
+                target="_blank"
                 className="border border-secondary py-2 px-4 rounded-md hover:bg-white/20 transition-all ease-in-out"
               >
                 Resume

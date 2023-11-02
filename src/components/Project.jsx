@@ -20,11 +20,15 @@ export default function Project({ project }) {
             ))}
           </div>
           <div className="flex items-end justify-end px-12 gap-4">
-            <a href={project.repo} className="hover:text-white">
+            <a href={project.repo} target="_blank" className="hover:text-white">
               <GitHub />
             </a>
             {project.link && (
-              <a href={project.link} className="hover:text-white">
+              <a
+                href={project.link}
+                target="_blank"
+                className="hover:text-white"
+              >
                 <Launch />
               </a>
             )}
@@ -49,11 +53,19 @@ export default function Project({ project }) {
               ))}
             </div>
             <div className="flex items-end justify-end sm:px-12 px-4 gap-4">
-              <a href={project.repo} className="hover:text-white">
+              <a
+                href={project.repo}
+                target="_blank"
+                className="hover:text-white"
+              >
                 <GitHub />
               </a>
               {project.link && (
-                <a href={project.link} className="hover:text-white">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  className="hover:text-white"
+                >
                   <Launch />
                 </a>
               )}
