@@ -143,10 +143,11 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+
       <div
         className={`${
           toggle ? "md:hidden" : "hidden opacity-0"
-        } top-0 w-80 z-[9999] fixed`}
+        } top-0 w-60 sm:w-[25rem] z-[9999] fixed`}
       >
         <motion.aside
           initial={{
@@ -158,13 +159,13 @@ const Navbar = () => {
             opacity: 0.8,
           }}
           transition={{ duration: 1 }}
-          className="h-screen bg-white flex justify-center items-center"
+          className="h-screen bg-primary/95 flex justify-center items-center"
         >
-          <ul className="list-none md:hidden flex-col gap-10">
+          <ul className="list-none md:hidden flex-col flex gap-8">
             {navLinks.map((link) => (
               <li
                 key={link.id}
-                className="hover:text-gray-400 text-[36px] font-medium cursor-pointer text-black"
+                className="hover:text-gray-400 text-[36px] font-bold cursor-pointer text-white"
                 onClick={() => {
                   setActive(link.title);
                   setToggle(!toggle);
@@ -173,7 +174,7 @@ const Navbar = () => {
                 <a href={`#${link.id}`}>{link.title}</a>
               </li>
             ))}
-            <li className="hover:text-gray-400 text-[36px] font-medium cursor-pointer text-black">
+            <li className="hover:text-gray-400 text-[36px] font-bold cursor-pointer text-white">
               <a href="./resume.pdf">Resume</a>
             </li>
           </ul>
