@@ -4,7 +4,6 @@ import { projects } from "../constants";
 import Project from "./Project";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 
 const Projects = () => {
@@ -12,13 +11,15 @@ const Projects = () => {
 
   function scrollLeft() {
     if (ref.current) {
-      ref.current.scrollLeft -= 1000;
+      const scrollAmount = window.innerWidth < 768 ? 500 : 1000;
+      ref.current.scrollLeft -= scrollAmount;
     }
   }
 
   function scrollRight() {
     if (ref.current) {
-      ref.current.scrollLeft += 1000;
+      const scrollAmount = window.innerWidth < 768 ? 500 : 1000;
+      ref.current.scrollLeft += scrollAmount;
     }
   }
 
