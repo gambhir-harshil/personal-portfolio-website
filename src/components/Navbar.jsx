@@ -1,45 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { navLinks } from "../constants";
-import { slideIn } from "../utils/motion";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
+  const ref = useRef();
+
   return (
     <>
       <nav
-        className="sm:px-16 px-6 w-full flex py-5 
+        className="md:px-16 px-6 w-full flex py-5 
         items-center fixed top-0 z-20 bg-primary"
       >
         <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
           <Link
-            to="/"
-            className="flex items-center gap-2"
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 1,
+            }}
+            className="font-semibold text-[28px] text-white tracking-[10px] cursor-pointer"
+            href="/"
             onClick={() => {
-              setActive("");
               ref.current.scrollTo(0, 0);
             }}
           >
-            <motion.a
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              transition={{
-                duration: 1,
-              }}
-              className="font-semibold text-[28px] text-white tracking-[10px]"
-            >
-              HARSHIL.
-            </motion.a>
+            HARSHIL.
           </Link>
-          <ul className="list-none hidden sm:flex flex-row gap-10">
+          <ul className="list-none hidden md:flex flex-row gap-10">
             <motion.li
               initial={{
                 y: -100,
@@ -113,9 +109,17 @@ const Navbar = () => {
                 Contact
               </a>
             </motion.li>
+            <motion.li>
+              <a
+                href="./resume.pdf"
+                className="border border-secondary py-2 px-4 rounded-md hover:bg-white/20 transition-all ease-in-out"
+              >
+                Resume
+              </a>
+            </motion.li>
           </ul>
           <button
-            className="sm:hidden flex top-0 right-0 z-20 relative w-10 h-10 text-white focus:outline-none"
+            className="md:hidden flex top-0 right-0 z-20 relative w-10 h-10 text-white focus:outline-none"
             onClick={() => setToggle(!toggle)}
           >
             <div className="absolute w-8 transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
@@ -140,7 +144,7 @@ const Navbar = () => {
       </nav>
       <div
         className={`${
-          toggle ? "sm:hidden" : "hidden opacity-0"
+          toggle ? "md:hidden" : "hidden opacity-0"
         } top-0 w-80 z-[9999] fixed`}
       >
         <motion.aside
@@ -155,13 +159,11 @@ const Navbar = () => {
           transition={{ duration: 1 }}
           className="h-screen bg-white flex justify-center items-center"
         >
-          <ul className="list-none sm:hidden flex-col gap-10">
+          <ul className="list-none md:hidden flex-col gap-10">
             {navLinks.map((link) => (
               <li
                 key={link.id}
-                className={`${
-                  active === link.title ? "text-black" : "text-black"
-                } hover:text-gray-400 text-[36px] font-medium cursor-pointer `}
+                className="hover:text-gray-400 text-[36px] font-medium cursor-pointer text-black"
                 onClick={() => {
                   setActive(link.title);
                   setToggle(!toggle);
@@ -170,6 +172,9 @@ const Navbar = () => {
                 <a href={`#${link.id}`}>{link.title}</a>
               </li>
             ))}
+            <li className="hover:text-gray-400 text-[36px] font-medium cursor-pointer text-black">
+              <a href="./resume.pdf">Resume</a>
+            </li>
           </ul>
         </motion.aside>
       </div>

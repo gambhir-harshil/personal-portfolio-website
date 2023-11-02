@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require('tailwindcss/plugin')
+
+const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   mode: "jit",
@@ -22,19 +23,20 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function({ addUtilities, addComponents, e, config }) {
+    require("tailwind-scrollbar"),
+    plugin(function ({ addUtilities, addComponents, e, config }) {
       const newUtilities = {
-        '.horizontal-tb': {
-          writingMode: 'horizontal-tb',
+        ".horizontal-tb": {
+          writingMode: "horizontal-tb",
         },
-        '.vertical-rl': {
-          writingMode: 'vertical-rl'
+        ".vertical-rl": {
+          writingMode: "vertical-rl",
         },
-        '.vertical-lr': {
-          writingMode: 'vertical-lr'
-        }
-      }
-      addUtilities(newUtilities)
-    })
+        ".vertical-lr": {
+          writingMode: "vertical-lr",
+        },
+      };
+      addUtilities(newUtilities);
+    }),
   ],
-}
+};

@@ -7,6 +7,6 @@ import tailwind from './tailwind.png'
 import typescript from './typescript.svg'
 import nextjs from './next.png'
 import discord from './discord.svg'
-import handsome from './handsome.jpeg'
+//import handsome from './handsome.jpeg'
 
-export { html, javascript, mongodb, nodejs, react, tailwind, typescript, nextjs, discord, handsome }
+export { html, javascript, mongodb, nodejs, react, tailwind, typescript, nextjs, discord }

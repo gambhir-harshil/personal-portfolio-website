@@ -25,8 +25,8 @@ const Contact = () => {
         <p className="text-center text-secondary lg:text-[20px] sm:text-[20px] xs:text-[18px] text-[16px]">Got a question or proposal, or just want <br /> to say hello? Go ahead.</p>
       </div>
       <button className="mt-12 border border-secondary py-4 px-6 rounded-md hover:bg-white/20 transition-all ease-in-out"><a href="mailto:harshilgambhir3@gmail.com">Say Hello</a></button>
-      <div className="absolute bottom-5 text-secondary text-sm">
-        Built by Harshil Gambhir
+      <div className="absolute bottom-5 text-secondary text-sm hover:text-white cursor-pointer">
+        <a href="https://github.com/gambhir-harshil">Built by Harshil Gambhir</a>
       </div>
       <div className="absolute bottom-10 md:hidden">
         <ul className="flex">

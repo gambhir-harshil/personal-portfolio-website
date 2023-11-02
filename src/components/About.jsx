@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import { handsome } from '../assets'
+//import { handsome } from '../assets'
 
 const About = () => {
   return (
@@ -17,11 +17,10 @@ const About = () => {
           About me
         </motion.h3>
         <img
-        src={handsome}
-        className="-mb-16 mt-24 md:mb-0 flex-shrink-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:h-95 xl:w-[350px] xl:h-[350px] grayscale hover:grayscale-0 transition-all ease-in-out cursor-pointer"
+        src={""}
+        className="-mb-16 mt-24 md:mb-0 flex-shrink-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:h-95 xl:w-[350px] xl:h-[350px] 
+        grayscale hover:grayscale-0 hover:scale-105 transition-all ease-in-out cursor-pointer"
       />
-
-        {/* <div className='absolute w-[350px] h-[350px] border-2 border-white left-[72px] top-[300px] rounded-lg -z-50 hover:left-[68px] hover:top-[300px]'/> */}
 
       <motion.div
         initial={{

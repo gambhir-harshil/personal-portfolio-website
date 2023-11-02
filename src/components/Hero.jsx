@@ -5,11 +5,10 @@ import { SocialIcon } from "react-social-icons";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
-import { discord } from "../assets";
 
 const Hero = () => {
   const [text, count] = useTypewriter({
-    words: ["I build things for the web", "I love coffee", "I love to workout"],
+    words: ["I build things for the web", "I love coffee", "I love music"],
     loop: true,
     delaySpeed: 2000,
   });
@@ -39,8 +38,7 @@ const Hero = () => {
             }}
             className={styles.heroHeadText}
           >
-            Hi, I'm{" "}
-            <span className="text-[#915eff]/80">Harshil</span>
+            Hi, I'm <span className="text-[#915eff]/80">Harshil</span>
           </motion.h1>
           <motion.p
             initial={{
@@ -53,7 +51,7 @@ const Hero = () => {
             }}
             transition={{
               duration: 1,
-              delay: 1.5
+              delay: 1.5,
             }}
             className={styles.heroSubText}
           >
