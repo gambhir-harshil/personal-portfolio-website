@@ -174,9 +174,9 @@ const Navbar = () => {
                 <a href={`#${link.id}`}>{link.title}</a>
               </li>
             ))}
-            <li className="hover:text-gray-400 text-[36px] font-bold cursor-pointer text-white">
+            {/* <li className="hover:text-gray-400 text-[36px] font-bold cursor-pointer text-white">
               <a href="./resume.pdf">Resume</a>
-            </li>
+            </li> */}
           </ul>
         </motion.aside>
       </div>
