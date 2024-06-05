@@ -109,7 +109,7 @@ const Navbar = () => {
                 Contact
               </a>
             </motion.li>
-            <motion.li>
+            {/* <motion.li>
               <a
                 href="./resume.pdf"
                 target="_blank"
@@ -117,7 +117,7 @@ const Navbar = () => {
               >
                 Resume
               </a>
-            </motion.li>
+            </motion.li> */}
           </ul>
           <button
             className="md:hidden flex top-0 right-0 z-20 relative w-10 h-10 text-white focus:outline-none"
